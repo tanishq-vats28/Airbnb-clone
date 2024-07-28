@@ -58,6 +58,8 @@
                 ></p>
                 <p class="card-text"><%= review.comment %></p>
               </div>
+              <% if (currUser && listingData.owner._id.equals(currUser._id)) {
+              %>
               <div>
                 <form
                   method="POST"
@@ -68,6 +70,7 @@
                   </button>
                 </form>
               </div>
+              <%}%>
             </div>
           </div>
           <% }) %>
