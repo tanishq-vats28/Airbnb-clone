@@ -14,7 +14,7 @@ const addUser = async (req, res) => {
       if (err) {
         next(err);
       }
-      req.flash("success", "Welcome to Wonderlust");
+      req.flash("success", "Welcome to Airbnb-clone");
       res.redirect("/listings");
     });
   } catch (err) {
@@ -26,7 +26,7 @@ const renderLoginForm = (req, res) => {
   res.render("user/login.ejs");
 };
 const loginUser = (req, res) => {
-  req.flash("success", "Welcome Back to Wonderlust");
+  req.flash("success", "Welcome Back to Airbnb-clone");
   let prevPath = res.locals.redirectUrl || "/listings";
   res.redirect(prevPath);
 };
