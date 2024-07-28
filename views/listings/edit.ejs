@@ -1,0 +1,83 @@
+<%layout('/layouts/boilerplate')%>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <h2>Edit Listing!!</h2>
+    <form
+      method="POST"
+      action="/listings/<%=prevData._id%>?_method=PUT"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          name="listing[title]"
+          value="<%=prevData.title%>"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea name="listing[description]" required class="form-control">
+<%=prevData.description%></textarea
+        >
+      </div>
+      <div class="mb-3">
+        <p>Preview Image</p>
+        <img src="<%=editedImgUrl%>" alt="no image found" />
+      </div>
+      <div class="mb-3">
+        <label for="image">Image</label>
+        <input type="file" name="listing[image]" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="filter" class="form-label">Filter</label>
+        <select name="listing[filter]" id="filter" class="form-control" re>
+          <% const filters = ["Trending", "Rooms", "Domes", "Arctic", "Mountain", "Beach", "Down-town", "Pools", "Lakes", "Country-side"]; %>
+          <% filters.forEach(f => { %>
+            <option value="<%= f %>" <%= prevData.filter.includes(f) ? 'selected' : '' %>><%= f %></option>
+          <% }); %>
+        </select>
+      </div>      
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            name="listing[price]"
+            value="<%=prevData.price%>"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label for="location" class="form-label">Location</label>
+          <input
+            type="text"
+            name="listing[location]"
+            value="<%=prevData.location%>"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input
+          type="text"
+          name="listing[country]"
+          value="<%=prevData.country%>"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-secondary edit-btn">EDIT</button>
+      </div>
+    </form>
+  </div>
+</div>

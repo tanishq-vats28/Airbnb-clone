@@ -1,0 +1,27 @@
+<%layout('/layouts/boilerplate')-%> <%- include("../includes/filters.ejs") %>
+<%if(sampleData.length>0){%>
+<div class="row">
+  <% for (let data of sampleData) { %>
+  <a href="/listings/<%= data._id %>">
+    <div class="card index-card" style="width: 25rem">
+      <img
+        src="<%=data.image.url%>"
+        class="card-img-top card-img"
+        alt="Listing Image"
+        style="height: 20rem"
+      />
+      <div class="card-img-overlay"></div>
+      <div class="card-body">
+        <p class="card-text">
+          <b><%= data.title %></b><br />
+          &#8377; <%=data.price.toLocaleString("en-IN")%> / Night
+          <i class="tax-total">&nbsp; &nbsp; 18% Tax</i>
+        </p>
+      </div>
+    </div>
+  </a>
+  <% } %>
+</div>
+<%}else{%>
+<h1>Please Seleect Some Different Category</h1>
+<%}%>

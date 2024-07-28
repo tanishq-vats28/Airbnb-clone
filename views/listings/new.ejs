@@ -1,0 +1,96 @@
+<%layout('/layouts/boilerplate')%>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <h2>Create New Listing!!</h2>
+    <form
+      method="POST"
+      action="/listings"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          name="listing[title]"
+          placeholder="Give a catchy title"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          name="listing[description]"
+          class="form-control"
+          required
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="image">Image</label>
+        <input
+          type="file"
+          name="listing[image]"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="filter" class="form-label">Filter</label>
+        <select
+          name="listing[filter]"
+          id="filter"
+          class="form-control"
+          required
+        >
+          <option value="Trending">Trending</option>
+          <option value="Rooms">Rooms</option>
+          <option value="Domes">Domes</option>
+          <option value="Arctic">Arctic</option>
+          <option value="Mountain">Mountain</option>
+          <option value="Beach">Beach</option>
+          <option value="Down-town">Down-town</option>
+          <option value="Pools">Pools</option>
+          <option value="Lakes">Lakes</option>
+          <option value="Country-side">Country-side</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            name="listing[price]"
+            placeholder="1000"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="mb-3 col-md-8">
+          <label for="location" class="form-label">Location</label>
+          <input
+            type="text"
+            name="listing[location]"
+            placeholder="New Delhi"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input
+          type="text"
+          name="listing[country]"
+          placeholder="India"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-secondary add-btn">ADD</button>
+      </div>
+    </form>
+  </div>
+</div>
