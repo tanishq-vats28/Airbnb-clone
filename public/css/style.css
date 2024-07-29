@@ -272,10 +272,7 @@ body {
     max-height: 250px;
     overflow-y: scroll;
     padding: 0 1rem;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    border-right: none;
+    border: 1px solid black;
     border-radius: 0.5rem;
     margin-top: 1.2rem;
   }
