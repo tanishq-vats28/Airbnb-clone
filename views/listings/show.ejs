@@ -58,8 +58,7 @@
                 ></p>
                 <p class="card-text"><%= review.comment %></p>
               </div>
-              <% if (currUser &&
-              listingData.reviews.author.equals(currUser._id)) { %>
+              <% if (currUser && review.author._id.equals(currUser._id)) { %>
               <div>
                 <form
                   method="POST"

@@ -17,6 +17,7 @@ const renderShowPage = async (req, res) => {
       },
     })
     .populate("owner");
+  console.log(listingData);
   if (!listingData) {
     req.flash("error", "Listing doesn't exist");
     return res.redirect("/listings");
