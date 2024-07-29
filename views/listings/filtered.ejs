@@ -1,6 +1,6 @@
 <%layout('/layouts/boilerplate')-%> <%- include("../includes/filters.ejs") %>
 <%if(sampleData.length>0){%>
-<div class="row">
+<div class="listing">
   <% for (let data of sampleData) { %>
   <a href="/listings/<%= data._id %>">
     <div class="card index-card" style="width: 25rem">
